@@ -1,0 +1,25 @@
+install debian 11 bullseye
+* using netinst.iso
+* download firmware.zip and unzip to /firmware or /
+* 
+post install
+apt install git gcc make tmux emacs fish nvm curl
+
+git clone https://git.suckless.org/dwm
+git clone https://git.suckless.org/st
+
+apt install xdotool
+git clone https://github.com/wmutils/core.git wmutils
+apt install libxcb1-dev libcbx-cursor-dev
+
+
+emacs 
+git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
+mkdir .emacs.dir
+cd .emacs.dir
+git clone --depth 1 https://github.com/hlissner/doom-emacs
+doom-emacs/bin/doom install
+
+pop-shell
+git clone https://github.com/popp-os/shell.git pop-shell
+apt install node-typescript
