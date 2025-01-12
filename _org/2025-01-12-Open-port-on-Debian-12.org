@@ -1,0 +1,28 @@
+# How to open a port on Debian 12
+
+* Ways to open a port on Debian 12
+**  Method 1: Open a Port on Debian 12 Using the iptables Command
+#+BEGIN_SRC shell
+  sudo iptables -A INPUT -p tcp --dport 4429 --jump ACCEPT
+
+ # Options used in the above iptables command are explained as:
+ # A Option: It is used to append the rules to the input chain
+ # p Option: It is used to specify the port number
+ # dport Option: It is used to define the destination of the port
+ # Jump Option: It defines the target action of the command
+  sudo iptables-save
+  sudo iptables -L
+#+END_SRC
+
+** Method 2: Open a Port on Debian 12 Using the ufw Command 
+ #+BEGIN_SRC shell
+  sudo ufw enable
+  sudo ufw allow 80
+  sudo ufw status
+  #+END_SRC
+
+** Method 3: Open a Port on Debian 12 Using the nmap Command
+#+BEGIN_SRC shell
+  sudo nmap -open -p 5431 localhost
+  sudo ss -tulpn
+#+END_SRC

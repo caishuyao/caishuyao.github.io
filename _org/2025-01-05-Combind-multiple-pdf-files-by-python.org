@@ -1,0 +1,24 @@
+#+title: Combind Multiple Pdf Files By Python
+* Using following code to combine multiple pdf files
+#+BEGIN_SRC python
+import PyPDF2
+
+# List of PDF files to be combined
+pdf_files = ["file1.pdf",
+             "file2.pdf",
+             "file3.pdf"]
+
+# Create a PDF merger object
+pdf_merger = PyPDF2.PdfMerger()
+
+# Append each PDF file to the merger
+for pdf in pdf_files:
+    pdf_merger.append(pdf)
+
+# Write out the combined PDF to a new file
+with open('combined.pdf', 'wb') as output_pdf:
+    pdf_merger.write(output_pdf)
+
+print("PDF files combined successfully!")
+
+#+END_SRC
